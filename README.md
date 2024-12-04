@@ -25,8 +25,8 @@ This project is a modern API server built with **Apollo GraphQL** and **Prisma**
    Create a `.env` file at the root of the project and configure your database connection. Example:
 
    ```env
-   DATABASE_URL="postgresql://user:password@localhost:5432/mydatabase"
-   JWT_SECRET="your-secret-jwt-token"
+   DATABASE_URL=""
+   JWT_SECRET=""
    ```
 
    Generate Prisma Client:
