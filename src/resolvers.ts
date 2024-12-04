@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { PrismaClient, Prisma } from "@prisma/client";
 import { AuthenticationError, ForbiddenError } from "apollo-server-express";
 import { compare, hash } from "bcryptjs";
@@ -16,11 +15,12 @@ export const resolvers = {
         if (filter.name) where.name = { contains: filter.name };
         if (filter.class) where.class = filter.class;
         if (filter.minAge) where.age = { gte: filter.minAge };
-        if (filter.maxAge) where.age = { ...where.age, lte: filter.maxAge };
+        if (filter.maxAge) where.age = { lte: filter.maxAge };
       }
 
       const orderByClause: Prisma.EmployeeOrderByWithRelationInput = {};
       if (orderBy) {
+        console.log(orderBy)
         orderByClause[orderBy.field.toLowerCase()] =
           orderBy.direction.toLowerCase();
       }
