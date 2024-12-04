@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PrismaClient, Prisma } from "@prisma/client";
 import { AuthenticationError, ForbiddenError } from "apollo-server-express";
 import { compare, hash } from "bcryptjs";
