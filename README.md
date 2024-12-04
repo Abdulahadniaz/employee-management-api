@@ -26,6 +26,7 @@ This project is a modern API server built with **Apollo GraphQL** and **Prisma**
 
    ```env
    DATABASE_URL="postgresql://user:password@localhost:5432/mydatabase"
+   JWT_SECRET="your-secret-jwt-token"
    ```
 
    Generate Prisma Client:
