@@ -1,0 +1,97 @@
+type Employee {
+    id: Int!
+    name: String!
+    age: Int!
+    class: String!
+    subjects: [String!]!
+    attendance: Float!
+    role: Role!
+}
+
+enum Role {
+    ADMIN
+    EMPLOYEE
+}
+
+type Query {
+    employees(
+        filter: EmployeeFilter
+        skip: Int
+        take: Int
+        orderBy: EmployeeOrderBy
+    ): EmployeeConnection!
+    employee(id: Int!): Employee
+}
+
+type Mutation {
+    register(input: RegistrationInput!): AuthPayload!
+    login(email: String!, password: String!): AuthPayload!
+    addEmployee(input: EmployeeInput!): Employee!
+    updateEmployee(id: Int!, input: EmployeeInput!): Employee!
+}
+
+input RegistrationInput {
+    email: String!
+    password: String!
+    name: String!
+    age: Int!
+    class: String!
+    subjects: [String!]!
+    attendance: Float!
+}
+
+type AuthPayload {
+    token: String!
+    employee: Employee!
+}
+
+input EmployeeInput {
+    name: String!
+    age: Int!
+    class: String!
+    subjects: [String!]!
+    attendance: Float!
+    role: Role
+    email: String!
+    password: String!
+}
+
+input EmployeeFilter {
+    name: String
+    class: String
+    minAge: Int
+    maxAge: Int
+}
+
+input EmployeeOrderBy {
+    field: EmployeeOrderField!
+    direction: OrderDirection!
+}
+
+enum EmployeeOrderField {
+    NAME
+    AGE
+    CLASS
+    ATTENDANCE
+}
+
+enum OrderDirection {
+    ASC
+    DESC
+}
+
+type EmployeeConnection {
+    edges: [EmployeeEdge!]!
+    pageInfo: PageInfo!
+    totalCount: Int!
+}
+
+type EmployeeEdge {
+    node: Employee!
+    cursor: String!
+}
+
+type PageInfo {
+    hasNextPage: Boolean!
+    endCursor: String
+}
