@@ -1,10 +1,11 @@
 # Employee Management(Backend)
 
-This project is a modern API server built with **Apollo GraphQL** and **Prisma**. It provides a scalable and efficient way to handle GraphQL queries and mutations, with Prisma serving as the ORM for database operations.
+This project is a modern API server built with **Apollo GraphQL**, **Express**, and **Prisma**. It provides a scalable and efficient way to handle GraphQL queries and mutations, with Prisma serving as the ORM for database operations.
 
 ## Features
 
 - **GraphQL API**: A fully-featured GraphQL API built with Apollo Server.
+- **Express Framework**: Lightweight and fast middleware to handle HTTP requests.
 - **Prisma ORM**: Simplifies database interactions with type-safe and fast queries.
 
 1. Clone the repository:
