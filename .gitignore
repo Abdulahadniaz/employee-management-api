@@ -40,3 +40,4 @@ npm-shrinkwrap.json
 
 # Miscellaneous
 *.bak
+.vercel
