@@ -24,7 +24,7 @@ async function startServer() {
 
   app.listen({ port: 4000 }, () =>
     console.log(
-      `🚀 Server ready at http://localhost:4000${server.graphqlPath}`,
+      `🚀 Server listening at http://localhost:4000${server.graphqlPath}`,
     ),
   );
 }
